@@ -1,4 +1,3 @@
-
 import Characters from "./components/Characters/Characters";
 
 function App() {
