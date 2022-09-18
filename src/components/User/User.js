@@ -1,7 +1,14 @@
-function User() {
+function User(props) {
+
+  let {user,lift} = props;
+
   return (<div>
-    
-        fsdfsdf
+
+       <h3> {user.id}.{user.name}</h3>
+          <button onClick={()=>{
+              lift(user);
+          }}>Information</button>
+
     </div>
   );
 }
