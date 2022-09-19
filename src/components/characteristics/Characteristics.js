@@ -8,9 +8,11 @@ function Characteristics() {
   const [characteristics,setCharacteristics] = useState([]);
 
   useEffect(()=>{
-    getCharacteristicsAxios().then(value => {
-      // console.log(value);
-      setCharacteristics(value.data)
+    getCharacteristicsAxios().then(({data}) => {
+      {
+        const filter = data.filter(characteristic => (characteristic.launch_year !== "2020"));
+        setCharacteristics(filter);
+      }
     });
   },[])
 
