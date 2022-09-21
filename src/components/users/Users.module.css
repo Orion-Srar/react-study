@@ -1,0 +1,15 @@
+.Users{
+    display: flex;
+
+}
+
+.name{
+    width: 20vw;
+    border-right: 2px solid black;
+
+}
+
+.post{
+    padding: 5px;
+    width: 80vw;
+}

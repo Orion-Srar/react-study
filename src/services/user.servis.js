@@ -2,8 +2,11 @@ import {axiosInstance} from "../services";
 import {urls} from "../configs";
 
 
-const userService = {
+const usersService = {
     getAll:()=>axiosInstance.get(urls.users)
 }
+const postsService = {
+    getAll:(id)=>axiosInstance.get(urls.users + '/' + id + urls.posts)
+}
 
-export {userService};
+export {usersService,postsService};
