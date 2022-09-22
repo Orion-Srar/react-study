@@ -1,7 +1,7 @@
 import {axiosInstance} from "./index";
 
-const rocketService = {
+const usersService = {
     getAll:()=>axiosInstance()
 }
 
-export {rocketService};
+export {usersService};
