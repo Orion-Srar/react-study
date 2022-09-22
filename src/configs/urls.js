@@ -1,5 +1,7 @@
-const baseURL = 'https://api.spacexdata.com/v3/launches/'
+const baseURL = 'http://owu.linkpc.net/api/v2'
 
+const urls = {
+    cars:'/cars'
+}
 
-
-export {baseURL};
+export {baseURL,urls};
