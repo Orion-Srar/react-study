@@ -1,7 +1,8 @@
-import {axiosInstance} from "./index";
+import {urls} from "../configs";
+import {axiosInstance} from "./axios.service";
 
 const usersService = {
-    getAll:()=>axiosInstance()
+    getAll:()=>axiosInstance(urls.users)
 }
 
 export {usersService};

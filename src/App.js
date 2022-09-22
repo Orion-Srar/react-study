@@ -1,14 +1,24 @@
-import {Rockets} from "./components";
+import {useState} from "react";
+
+import {Posts, Users} from "./components";
+import {postsService} from "./services";
 
 function App() {
 
+    const [posts,setPosts] = useState([]);
 
-  return (<div>
+    function getUserId(userId) {
+        postsService.getAll(userId).then(value => setPosts(value.data))
+    }
 
-        <Rockets/>
 
-    </div>
-  );
+    return (<div>
+
+            <Posts posts={posts} />
+            <Users getUserId={getUserId}/>
+
+        </div>
+    );
 }
 
 export default App;
