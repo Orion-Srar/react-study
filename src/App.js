@@ -1,14 +1,17 @@
-import {Rockets} from "./components";
+import {Comments, FormComment, FormUser, Users} from "./components";
 
 function App() {
 
 
-  return (<div>
+    return (<div>
 
-        <Rockets/>
+            <FormUser/>
+            <Users/>
+            <FormComment/>
+            <Comments/>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
