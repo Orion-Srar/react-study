@@ -1,14 +1,14 @@
-import {Rockets} from "./components";
+import {Cars} from "./components";
 
 function App() {
 
 
-  return (<div>
+    return (<div>
 
-        <Rockets/>
+            <Cars/>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
