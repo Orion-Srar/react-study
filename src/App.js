@@ -1,11 +1,10 @@
-// import {Users} from "./components";
 import {
     Routes,
     Route,
     Link,
 } from "react-router-dom";
 
-import {Albums, Comments, Home, Posts, Todos, Users} from "./components";
+import {Albums, Comments, Home, Posts, Todos, UserDetails, Users} from "./components";
 
 
 function App() {
@@ -23,10 +22,15 @@ function App() {
             <Routes>
                 <Route index element={<Home/>}/>
                 <Route path={'users'} element={<Users/>}/>
+                <Route path={'user/:id'} element={<UserDetails/>}/>
                 <Route path={'todos'} element={<Todos/>}/>
                 <Route path={'albums'} element={<Albums/>}/>
-                <Route path={'comments'} element={<Comments/>}/>
+                <Route path={'comments'} element={<Comments/>}>
+
+
+                </Route>
                 <Route path={'posts/:id'} element={<Posts/>}/>
+
             </Routes>
 
         </div>

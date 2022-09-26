@@ -1,18 +1,20 @@
 import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 
 import {postsService} from "../../services";
 import {Post} from "../post/Post";
 
 function Posts() {
-    const [posts,setPosts] = useState([]);
+
+    const {id:postId} = useParams();
+
+    const [post,setPost] = useState(null);
     useEffect(()=>{
-        postsService.getAll().then(({data})=>setPosts(data))
-    },[])
+        postsService.getById(postId).then(({data})=>setPost(data))
+    },[postId])
   return (
       <div>
-
-          {posts.map(post => (<Post key={post.id} post={post} />))}
-
+          {post && <Post post={post}/>}
     </div>
   );
 }
