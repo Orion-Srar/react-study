@@ -7,7 +7,7 @@ function Comment({comment}) {
 
     return (<div>
             <hr/>
-            <li><Link to={'/posts/' + postId}>postId:{postId}</Link></li>
+            <li><Link to={'posts/' + postId}>postId:{postId}</Link></li>
             <li>id:{id}</li>
             <li>name:{name}</li>
             <li>email:{email}</li>
