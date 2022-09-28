@@ -1,0 +1,19 @@
+.Header{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    background: cornflowerblue;
+    height: 100vh;
+    width: 10vw;
+}
+
+.Header a {
+    text-decoration: none;
+    color: red;
+    font-size: 1.3rem;
+}
+
+.Header a[class='active']{
+    background: blue;
+}
+

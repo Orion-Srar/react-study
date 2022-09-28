@@ -1,0 +1,9 @@
+.Post{
+    padding: 5px;
+    border: blue solid 2px;
+
+}
+
+.Post a[class='active']{
+    color: red;
+}
