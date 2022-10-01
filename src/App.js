@@ -1,17 +1,16 @@
-import {Rockets} from "./components";
-
 function App() {
 
-
-  return (<div>
-
-        <Rockets/>
-
-    </div>
-  );
+    return (
+        <div>
+    
+            App
+        
+        </div>
+    );
 }
 
-export default App;
+export {App};
+
 
 
 
