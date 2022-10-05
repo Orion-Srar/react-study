@@ -11,8 +11,9 @@ function Posts() {
 
             {
                 splice.map(post =>
-                <div key={post.id} >
-                    {post.title}
+                <div key={post.id}>
+
+                    {post.id}.{post.title}
                 </div>)
             }
 

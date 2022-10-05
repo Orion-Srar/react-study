@@ -27,19 +27,15 @@ function App() {
         })
     },[])
 
-
-
-
-
-
     return (
         <div>
-
+            <hr/>
             <Users/>
             <hr/>
             <Posts/>
             <hr/>
             <Comments/>
+            <hr/>
         </div>
     );
 }
