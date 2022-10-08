@@ -1,16 +1,27 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+
+import {usersService} from "../../serveces";
+import {LOAD_USERS} from "../../redux";
+import {User} from "../user/User";
 
 function Users() {
 
-    const state = useSelector(state => state.usersReducer);
+    const {users} = useSelector(state => state.usersReducer);
 
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        usersService.getAll().then(({data}) => dispatch({type: LOAD_USERS, payload: data}))
+
+    },[])
 
     return (
         <div>
-            <h3>USERS</h3>
+
 
             {
-                state.users.map(user =><div key={user.id} >{user.id}.{user.name}</div>)
+                users.map(user => <User key={user.id} user={user} />)
             }
 
         </div>
@@ -18,3 +29,4 @@ function Users() {
 }
 
 export {Users};
+

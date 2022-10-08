@@ -1,20 +1,25 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+
+import {postsService} from "../../serveces";
+import {LOAD_POSTS} from "../../redux";
+import {Post} from "../post/Post";
 
 function Posts() {
 
     const {posts} = useSelector(state => state.postsReducer);
-    const splice = posts.splice(0,10);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        postsService.getAll().then(({data})=>dispatch({type:LOAD_POSTS, payload: data}))
+    }, [])
 
     return (
         <div>
-            <h3>POST</h3>
 
             {
-                splice.map(post =>
-                <div key={post.id}>
-
-                    {post.id}.{post.title}
-                </div>)
+                posts.map(post => <Post key={post.id} post={post} />)
             }
 
         </div>

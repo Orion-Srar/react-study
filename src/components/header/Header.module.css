@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.Headers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    background: deepskyblue;
+
+}
+
+.Headers a {
+    text-decoration: none;
+    color: darkblue;
+
+}
+
+.Headers a:hover {
+    color: green;
+}

@@ -1,16 +1,25 @@
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+
+import {CommentsService} from "../../serveces";
+import {LOAD_COMMENTS} from "../../redux";
+import {Comment} from "../comment/Comment";
 
 function Comments() {
 
     const {comments} = useSelector(state => state.commentsReducer);
-    const slice = comments.slice(0,10);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        CommentsService.getAll.then(({data}) => dispatch({type: LOAD_COMMENTS, payload: data}))
+    }, [])
 
     return (
         <div>
-            <h3>COMMENTS</h3>
 
             {
-                slice.map(comment => <div key={comment.id} >{comment.name}</div>)
+                comments.map(comment => <Comment key={comment.id} comment={comment} />)
             }
 
         </div>
