@@ -1,0 +1,25 @@
+.Header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background: deepskyblue;
+    color: #04044f;
+    font-size: 20px;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.Header a {
+    text-decoration: none;
+
+}.Header a:hover {
+    background: yellow;
+    color: green;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 30px;
+ }
